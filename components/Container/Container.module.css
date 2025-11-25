@@ -1,0 +1,21 @@
+.container {
+  max-width: 1440px;
+  width: 1440px;
+  padding: 0 120px;
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 436px 120px 60px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('/hero/hero-backgr.webp') center/cover no-repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-container {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('/hero/hero-backgr@2x.webp') center/cover no-repeat;
+  }
+}
