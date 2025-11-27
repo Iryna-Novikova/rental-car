@@ -1,0 +1,88 @@
+.carImg {
+  object-fit: cover;
+  border-radius: 14px;
+  width: 100%;
+  height: 100%;
+}
+
+.imgWrapper {
+  position: relative;
+  /* background: linear-gradient(
+      180deg,
+      rgba(18, 20, 23, 0.5) 0%,
+      rgba(18, 20, 23, 0.5) 100%
+    )
+    center no-repeat; */
+  border-radius: 14px;
+  overflow: hidden;
+  height: 268px;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.btnFavorite {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  width: 18px;
+  height: 18px;
+  padding: 1px;
+  border: none;
+}
+
+.svgFavorite {
+  fill: var(--badges);
+  width: 16px;
+  height: 16px;
+}
+
+.brandModelBlock {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.25;
+  color: var(--main);
+
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.carModel {
+  color: var(--button);
+}
+
+.carPropertiesList {
+  display: flex;
+  columns: 3 content;
+  column-gap: 12px;
+  row-gap: 4px;
+  justify-content: flex-start;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+
+  line-height: 1.33;
+  color: var(--gray);
+  margin-bottom: 28px;
+}
+
+.carPropertiesItem {
+  width: auto;
+  position: relative;
+}
+
+.carPropertiesItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+
+  width: 1px;
+  height: 16px;
+  background-color: var(--gray-light);
+  top: 0;
+  left: calc(100% + 6px);
+  transform: rotate(-180deg);
+}

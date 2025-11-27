@@ -1,0 +1,11 @@
+.carList {
+  display: flex;
+  column-gap: 32px;
+  row-gap: 48px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.carItem {
+  width: calc((100% - 3 * 32px) / 4);
+}

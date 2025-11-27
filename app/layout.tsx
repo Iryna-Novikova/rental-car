@@ -2,11 +2,13 @@ import type { Metadata } from 'next';
 import { Manrope, Inter } from 'next/font/google';
 import 'modern-normalize';
 import './globals.css';
+import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
+import Header from '@/components/Header/Header';
 
 const fontManrope = Manrope({
   variable: '--font-family',
   subsets: ['latin'],
-  weight: ['600', '700'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
 
@@ -47,7 +49,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fontManrope.variable} ${fontInter.variable}`}>
-        {children}
+        <TanStackProvider>
+          <Header />
+          <main>{children}</main>
+        </TanStackProvider>
       </body>
     </html>
   );

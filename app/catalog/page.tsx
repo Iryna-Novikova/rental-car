@@ -1,11 +1,15 @@
 import Section from '@/components/Section/Section';
 import Container from '@/components/Container/Container';
+import { getAllCars } from '@/lib/api';
+import CatalogPageClient from './catalog.client';
 
-export default function Catalog() {
+export default async function CatalogPage() {
+  const res = await getAllCars(12, 1);
+
   return (
     <Section>
       <Container>
-        <h2>Catalog must be here</h2>
+        <CatalogPageClient initialData={res} />
       </Container>
     </Section>
   );
