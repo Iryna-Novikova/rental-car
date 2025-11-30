@@ -1,0 +1,95 @@
+.detailAllWrapper {
+  display: flex;
+  gap: 72px;
+}
+
+.formImgWrapper {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.carImg {
+  width: 640px;
+  height: 512px;
+  border-radius: 19px;
+  object-fit: cover;
+  margin-bottom: 40px;
+}
+
+.headWrapper {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  text-align: center;
+}
+
+.idInfo {
+  color: var(--gray);
+}
+
+.adrWrapper {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--button);
+  margin-bottom: 40px;
+}
+
+.description {
+  margin-bottom: 68px;
+}
+
+.propHeader {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.propListGroupItem {
+  display: flex;
+  gap: 8px;
+}
+
+.propListItem:not(:last-child) {
+  margin-bottom: 110px;
+}
+
+.propListGroupItem:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.adrLink {
+  transform:
+    color 0.3s ease,
+    scale 0.3s ease;
+}
+
+.svgLocation {
+  transform: fill 0.3s ease;
+}
+
+.adrLink:hover,
+.adrLink:focus {
+  color: var(--button);
+  scale: 105%;
+  fill: var(--button);
+}

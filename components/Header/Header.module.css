@@ -1,0 +1,39 @@
+.header {
+  padding-top: 26px;
+  padding-bottom: 26px;
+  background-color: var(--badges);
+}
+
+.headWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navList {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid var(--badges);
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--main);
+}
+
+.navLi,
+.link {
+  transform: scale 0.3s ease;
+}
+
+.navLiActive {
+  color: var(--button-hover);
+}
+
+.navLi:hover,
+.navLi:focus,
+.link:hover,
+.link:focus {
+  scale: 130%;
+}

@@ -31,9 +31,6 @@ export default function CatalogPageClient({
   const replaceCars = useCarsQueryListStore(state => state.replaceCars);
   const clearCars = useCarsQueryListStore(state => state.clearCars);
   const setSearchParams = useCarsQueryListStore(state => state.setSearchParams);
-  // const clearSearchParams = useCarsQueryListStore(
-  //   state => state.clearSearchParams
-  // );
 
   function handleSubmit(formData: FormData) {
     const brand = formData.get('brand') as string;
@@ -54,11 +51,6 @@ export default function CatalogPageClient({
     initialData: currentPage === 1 ? carsHttp : undefined,
   });
 
-  useEffect(() => {
-    console.log('Cars updated:', cars);
-    console.log('data updated: ', data);
-  }, [cars, data]);
-
   // зберігаємо знайдені машини в store
   useEffect(() => {
     const setCarsSelected = () => {
@@ -77,11 +69,8 @@ export default function CatalogPageClient({
     setCarsSelected();
   }, [data, setCars, replaceCars, clearCars, currentPage]);
 
-  // if (data) setCars(data.cars);
-
   function loadMore() {
     setCurrentPage(currentPage => currentPage + 1);
-    // setIsNewData(true);
   }
 
   return (
@@ -91,10 +80,12 @@ export default function CatalogPageClient({
         {/* показуємо лоудер при завантаженні */}
         {isLoading && <Loading />}
         {/* якщо виникла якась помилка */}
-        {isError && <div>Error. Try again.</div>}
+        {isError && <div className={css.message}>Error. Try again.</div>}
         {/* Якщо запит успішний але дані не знайдено */}
         {isSuccess && data.cars.length === 0 && (
-          <div>Data not found. Please try to put other filters.</div>
+          <div className={css.message}>
+            Cars not found. Please try to put other filters.
+          </div>
         )}
         {/* відображаємо знайдені дані */}
         {isSuccess && cars.length > 0 && (
@@ -107,7 +98,7 @@ export default function CatalogPageClient({
           </ul>
         )}
         {/* відображаємо "Load More", якщо ще не остання сторінка */}
-        {currentPage < data.totalPages && (
+        {isSuccess && currentPage < data.totalPages && (
           <Pagination buttonName={'Load more'} onClick={loadMore} />
         )}
       </Container>

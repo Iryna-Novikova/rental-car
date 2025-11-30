@@ -24,3 +24,10 @@ export interface CarAdr {
     city: string;
     country: string;
 }
+
+export interface CarBookFormType {
+    name: string;
+    email: string;
+    bookDate: string;
+    comment: string;
+}

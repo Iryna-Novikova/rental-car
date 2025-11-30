@@ -6,6 +6,8 @@ import { splitAddress } from '@/utils/splitAddress';
 import { cngMilesView } from '@/utils/cngMilesView';
 import Button from '../Button/Button';
 import { useRouter } from 'next/navigation';
+import { useFavCarsStore } from '@/lib/store/favCarsStore';
+import { useEffect, useState } from 'react';
 
 interface CarCardProps {
   car: Car;
@@ -14,8 +16,29 @@ interface CarCardProps {
 export default function CarCard({ car }: CarCardProps) {
   const router = useRouter();
 
+  const { favCars, setFavCars, clearFromFavCars } = useFavCarsStore();
+
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    const updateStates = () => {
+      if (!favCars) return;
+      setIsFavorite(favCars.includes(car.id));
+    };
+    updateStates();
+  }, [favCars, car.id]);
+
   function handleOnClick() {
     router.push(`/catalog/${car.id}`);
+  }
+
+  function toggleFav() {
+    if (isFavorite) {
+      clearFromFavCars(car.id);
+      return;
+    }
+    setFavCars(car.id);
+    return;
   }
 
   const carAdr: CarAdr = splitAddress(car.address);
@@ -33,13 +56,21 @@ export default function CarCard({ car }: CarCardProps) {
           loading="lazy"
           className={css.carImg}
         />
-        <button className={css.btnFavorite}>
-          <svg className={css.svgFavorite} width="16" height="16">
-            {/* {isFavourite ? ( */}
-            <use href="/sprite.svg#icon-heart-full"></use>
-            {/* ) : ( */}
-            {/* <use href="/sprite.svg#icon-heart-contur"></use> */}
-            {/* )} */}
+        <button className={css.btnFavorite} onClick={toggleFav}>
+          <svg
+            className={
+              isFavorite
+                ? `${css.svgFavorite} ${css.isFav}`
+                : `${css.svgFavorite}`
+            }
+            width="16"
+            height="16"
+          >
+            {isFavorite ? (
+              <use href="/sprite.svg#icon-heart-full"></use>
+            ) : (
+              <use href="/sprite.svg#icon-heart-contur"></use>
+            )}
           </svg>
         </button>
       </div>

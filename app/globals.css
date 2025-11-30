@@ -8,7 +8,7 @@
   --white: #fff;
   --button: #3470ff;
   --button-hover: #0b44cd;
-  --background: var(--badges);
+  --background: var(--white);
 }
 
 html,

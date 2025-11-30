@@ -5,11 +5,19 @@ import { useRouter } from 'next/navigation';
 import Section from '@/components/Section/Section';
 import Container from '@/components/Container/Container';
 import Button from '@/components/Button/Button';
+import { useCarsQueryListStore } from '@/lib/store/carsQueryListStore';
 
 export default function Home() {
   const router = useRouter();
 
+  const clearCars = useCarsQueryListStore(state => state.clearCars);
+  const clearSearchParams = useCarsQueryListStore(
+    state => state.clearSearchParams
+  );
+
   function handleOnClick() {
+    clearSearchParams();
+    clearCars();
     router.push('/catalog');
   }
 

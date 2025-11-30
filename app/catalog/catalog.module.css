@@ -11,3 +11,11 @@
   width: calc((100% - 3 * 32px) / 4);
   height: auto;
 }
+
+.message {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+}

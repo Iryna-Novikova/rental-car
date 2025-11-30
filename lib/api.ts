@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { CarTypePrice } from '@/types/car';
+import type { Car, CarTypePrice } from '@/types/car';
 import type { CarsHttpResponse } from '@/types/api';
 
 axios.defaults.baseURL = `${process.env.NEXT_PUBLIC_API_URL}`;
@@ -29,4 +29,13 @@ export const getAllBrands = async (): Promise<string[]> => {
     const response = await axios.get<string[]>(endPoint);
     
     return response.data;
+}
+
+//отримати автомобіль за ID
+export const getCarByID = async (carId: string): Promise<Car> => {
+   const endPoint = `/cars/${carId}`;
+
+   const response = await axios.get<Car>(endPoint);
+    
+   return response.data;
 }

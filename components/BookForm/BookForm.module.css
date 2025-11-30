@@ -1,0 +1,47 @@
+.form {
+  padding: 32px;
+  color: var(--main);
+  font-family: var(--font-family);
+
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.25;
+  color: var(--gray);
+  margin-bottom: 24px;
+}
+
+.input,
+.textArea {
+  width: 100%;
+  border-radius: 12px;
+  background-color: var(--inputs);
+  margin-bottom: 16px;
+  padding: 12px 20px;
+  border: none;
+}
+
+.textArea {
+  height: 88px;
+  margin-bottom: 24px;
+  resize: none;
+  overflow-y: auto;
+}
+
+.input::placeholder,
+.textArea::placeholder {
+  color: var(--gray);
+}

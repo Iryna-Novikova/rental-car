@@ -6,14 +6,12 @@ type CarsQueryListStore = {
     priceSel: CarTypePrice | '';
     milesFrom: number | '';
     milesTo: number | '';
-    // isNewData: boolean;
     cars: Car[];
     setSearchParams: (brand: string, price: CarTypePrice | '', milesFrom: number | '', milesTo: number | '') => void;
     clearSearchParams: () => void;
     setCars: (cars: Car[]) => void;
     clearCars: () => void;
     replaceCars: (newCars: Car[]) => void;
-    // setIsNewData: (sign: boolean) => void;
 }
 
 export const useCarsQueryListStore = create<CarsQueryListStore>()((set) => ({
@@ -29,5 +27,4 @@ export const useCarsQueryListStore = create<CarsQueryListStore>()((set) => ({
     setCars: (newCars: Car[]) => set(state => ({ cars: [...state.cars, ...newCars.filter(car => !state.cars.some(c => c.id === car.id))] })),
     replaceCars: (newCars: Car[]) => set({ cars: newCars }),
     clearCars: () => set({ cars: [] }),
-    // setIsNewData: (sign: boolean) => set({ isNewData: sign }),
 }));

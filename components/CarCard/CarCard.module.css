@@ -43,6 +43,10 @@
   width: 16px;
   height: 16px;
   /* z-index: 110; */
+  fill: var(--badges);
+}
+
+.isFav {
   fill: var(--button);
 }
 
