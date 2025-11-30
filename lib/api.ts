@@ -5,12 +5,12 @@ import type { CarsHttpResponse } from '@/types/api';
 axios.defaults.baseURL = `${process.env.NEXT_PUBLIC_API_URL}`;
 
 // отримати список автомобілів
-export const getAllCars = async (limit: number, page: number, brand?: string, rentalPrice?:CarTypePrice, minMileage?: number, maxMileage?: number): Promise<CarsHttpResponse> => {
+export const getAllCars = async (page: number, brand?: string, rentalPrice?:CarTypePrice | '', minMileage?: number | '', maxMileage?: number | '', limit?: number): Promise<CarsHttpResponse> => {
     const endPoint = '/cars';
 
     const params = {
-        limit, 
         page, 
+        limit: limit ? limit : 12, 
         brand: brand ? brand : '',
         rentalPrice: rentalPrice ? rentalPrice : '',
         minMileage: minMileage ? minMileage : '',

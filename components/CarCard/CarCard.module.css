@@ -7,12 +7,6 @@
 
 .imgWrapper {
   position: relative;
-  /* background: linear-gradient(
-      180deg,
-      rgba(18, 20, 23, 0.5) 0%,
-      rgba(18, 20, 23, 0.5) 100%
-    )
-    center no-repeat; */
   border-radius: 14px;
   overflow: hidden;
   height: 268px;
@@ -20,21 +14,41 @@
   margin-bottom: 16px;
 }
 
+.imgWrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: linear-gradient(
+    180deg,
+    rgba(18, 20, 23, 0.5) 0%,
+    rgba(18, 20, 23, 0.5) 100%
+  );
+  z-index: 1;
+}
+
 .btnFavorite {
   position: absolute;
   top: 16px;
   right: 16px;
-  z-index: 1000;
+  z-index: 100;
   width: 18px;
   height: 18px;
   padding: 1px;
   border: none;
+  background: transparent;
+  transform: scale 0.3s ease;
 }
 
 .svgFavorite {
-  fill: var(--badges);
   width: 16px;
   height: 16px;
+  /* z-index: 110; */
+  fill: var(--button);
+}
+
+.btnFavorite:hover,
+.btnFavorite:focus {
+  scale: 130%;
 }
 
 .brandModelBlock {
@@ -56,7 +70,7 @@
 
 .carPropertiesList {
   display: flex;
-  columns: 3 content;
+  flex-wrap: wrap;
   column-gap: 12px;
   row-gap: 4px;
   justify-content: flex-start;
@@ -71,8 +85,16 @@
 }
 
 .carPropertiesItem {
-  width: auto;
+  flex: 0 0 auto;
   position: relative;
+}
+
+.carPropertiesBreak {
+  flex-basis: 100%;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .carPropertiesItem:not(:last-child)::after {

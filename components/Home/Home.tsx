@@ -20,7 +20,11 @@ export default function Home() {
         <p className={css.text}>
           Reliable and budget-friendly rentals for any journey
         </p>
-        <Button btnOnClick={handleOnClick} buttonName="View Catalog"></Button>
+        <Button
+          type="button"
+          onClick={handleOnClick}
+          buttonName="View Catalog"
+        ></Button>
       </Container>
     </Section>
   );

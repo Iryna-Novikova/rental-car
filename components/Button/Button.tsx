@@ -2,14 +2,13 @@
 
 import css from './Button.module.css';
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   buttonName: string;
-  btnOnClick: () => void;
 }
 
-const Button = ({ buttonName, btnOnClick }: ButtonProps) => {
+const Button = ({ buttonName, type = 'button', ...rest }: ButtonProps) => {
   return (
-    <button onClick={btnOnClick} className={css.button}>
+    <button type={type} className={css.button} {...rest}>
       {buttonName}
     </button>
   );

@@ -1,0 +1,58 @@
+.form {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  align-items: flex-end;
+  width: 924px;
+  margin: 0 auto 56px;
+}
+
+.inputs {
+  display: flex;
+  gap: 16px;
+}
+
+.mileageGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+
+  line-height: 1.33;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.mileageGroupInput {
+  width: 320px;
+  height: 44px;
+  display: flex;
+  gap: 0;
+}
+
+.inputFrom,
+.inputTo {
+  border: none;
+  width: 50%;
+  padding: 12px 24px;
+  background-color: var(--inputs);
+  color: var(--main);
+}
+
+.inputFrom {
+  border-right: 1px solid var(--gray-light);
+  border-radius: 12px 0 0 12px;
+}
+
+.inputTo {
+  border-radius: 0 12px 12px 0;
+}
+
+.inputFrom::placeholder,
+.inputTo::placeholder {
+  color: var(--gray);
+}

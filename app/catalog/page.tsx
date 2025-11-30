@@ -1,16 +1,19 @@
-import Section from '@/components/Section/Section';
-import Container from '@/components/Container/Container';
-import { getAllCars } from '@/lib/api';
+// import Section from '@/components/Section/Section';
+// import Container from '@/components/Container/Container';
+import { getAllBrands, getAllCars } from '@/lib/api';
 import CatalogPageClient from './catalog.client';
 
 export default async function CatalogPage() {
-  const res = await getAllCars(12, 1);
+  const cars = await getAllCars(1);
+  const brands = await getAllBrands();
 
   return (
-    <Section>
-      <Container>
-        <CatalogPageClient initialData={res} />
-      </Container>
-    </Section>
+    <>
+      {/* <Section> */}
+      {/* <Container> */}
+      <CatalogPageClient carsHttp={cars} brands={brands} />
+      {/* </Container> */}
+      {/* </Section> */}
+    </>
   );
 }

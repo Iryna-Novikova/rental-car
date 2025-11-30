@@ -4,8 +4,10 @@
   row-gap: 48px;
   width: 100%;
   flex-wrap: wrap;
+  margin-bottom: 80px;
 }
 
 .carItem {
   width: calc((100% - 3 * 32px) / 4);
+  height: auto;
 }

@@ -14,6 +14,7 @@ const fontManrope = Manrope({
 
 const fontInter = Inter({
   variable: '--second-family',
+  weight: ['400'],
   subsets: ['latin'],
   display: 'swap',
 });

@@ -36,9 +36,9 @@ export default function CarCard({ car }: CarCardProps) {
         <button className={css.btnFavorite}>
           <svg className={css.svgFavorite} width="16" height="16">
             {/* {isFavourite ? ( */}
-            <use href="/svg-sprite.svg#icon-heart-full"></use>
+            <use href="/sprite.svg#icon-heart-full"></use>
             {/* ) : ( */}
-            {/* <use href="/svg-sprite.svg#icon-heart-contur"></use> */}
+            {/* <use href="/sprite.svg#icon-heart-contur"></use> */}
             {/* )} */}
           </svg>
         </button>
@@ -55,10 +55,12 @@ export default function CarCard({ car }: CarCardProps) {
         <li className={css.carPropertiesItem}>{carAdr.city}</li>
         <li className={css.carPropertiesItem}>{carAdr.country}</li>
         <li className={css.carPropertiesItem}>{car.rentalCompany}</li>
+        {/*щоб примусово перенести 4ту колонку на 2й рядок: */}
+        <li className={css.carPropertiesBreak}></li>
         <li className={css.carPropertiesItem}>{car.type}</li>
         <li className={css.carPropertiesItem}>{carMiles}</li>
       </ul>
-      <Button btnOnClick={handleOnClick} buttonName="Read more" />
+      <Button onClick={handleOnClick} buttonName="Read more" />
     </>
   );
 }
