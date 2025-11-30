@@ -24,7 +24,7 @@ export async function generateMetadata({
     openGraph: {
       title: `Car: ${car.brand} ${car.model}, ${car.year}`,
       description: car.description.slice(0, 30),
-      url: `http://localhost:3000/cars/${car.id}`,
+      url: `https://rental-6z27jb5rt-iryna-novikovas-projects.vercel.app/cars/${car.id}`,
       images: [
         {
           url: `${car.img}`,

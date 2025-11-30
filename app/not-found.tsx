@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Rental car',
     description: 'An app for rental car.',
-    url: 'http://localhost:3000',
+    url: 'https://rental-6z27jb5rt-iryna-novikovas-projects.vercel.app/',
     images: [
       {
         url: 'https://ac.goit.global/fullstack/react/og-meta.jpg',

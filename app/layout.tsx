@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Rental Car',
     description: 'An app for rental car',
-    url: 'http://localhost:3000', //тут має бути посилання на задеплоєний проект
+    url: 'https://rental-6z27jb5rt-iryna-novikovas-projects.vercel.app/',
     images: [
       {
         url: '/hero/hero-backgr.webp',
