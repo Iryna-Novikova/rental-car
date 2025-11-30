@@ -1,5 +1,5 @@
 import { getAllBrands, getAllCars } from '@/lib/api';
-import CatalogPageClient from './talog.client';
+import CatalogPageClient from './Catalog.client';
 
 export default async function CatalogPage() {
   const cars = await getAllCars(1);
