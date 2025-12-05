@@ -9,7 +9,7 @@ import { getCarByID } from '@/lib/api';
 import Container from '@/components/Container/Container';
 import Section from '@/components/Section/Section';
 import Image from 'next/image';
-import Loading from '@/app/loading';
+import Loader from '@/components/Loader/Loader';
 import BookForm from '@/components/BookForm/BookForm';
 import { CarAdr } from '@/types/car';
 import { splitAddress } from '@/utils/splitAddress';
@@ -26,7 +26,7 @@ export default function CarDetailClient() {
   // запит отримання інформації по машині за ID
   const {
     data: car,
-    isLoading,
+    isFetching,
     // isError,
     isSuccess,
   } = useQuery({
@@ -41,7 +41,7 @@ export default function CarDetailClient() {
   return (
     <Section>
       <Container>
-        {isLoading && <Loading />}
+        {isFetching && <Loader />}
         {isSuccess && (
           <div className={css.detailAllWrapper}>
             <div className={css.formImgWrapper}>

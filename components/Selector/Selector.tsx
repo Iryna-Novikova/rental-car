@@ -28,8 +28,13 @@ export function Selector({
   const [selValue, setSelValue] = useState<SelectValue>(defName);
 
   const onChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    // if (selectorName === 'price') setSelValue(`To &#36${e.target.value}`);
+    // console.log(`selectorName: `, selectorName);
     setSelValue(e.target.value);
+    return;
   };
+
+  console.log(selValue);
 
   return (
     <div className={css.selectGroup}>
@@ -47,7 +52,11 @@ export function Selector({
         <option value=""> {`Choose a ${selectorName}`}</option>
         {values.map(value => (
           <option key={value} value={value}>
-            {value}
+            {/* {value} */}
+            {selectorName === 'price' &&
+            value.toString() === selValue.toString()
+              ? `To $${value}`
+              : value}
           </option>
         ))}
       </select>

@@ -43,7 +43,7 @@ export default function CatalogPageClient({
   }
 
   // Запит
-  const { data, isError, isLoading, isSuccess } = useQuery({
+  const { data, isError, isFetching, isSuccess } = useQuery({
     queryKey: ['cars', currentPage, brandSel, priceSel, milesFrom, milesTo],
     queryFn: () =>
       getAllCars(currentPage, brandSel, priceSel, milesFrom, milesTo),
@@ -78,7 +78,7 @@ export default function CatalogPageClient({
       <Container>
         <SearchForm brands={brands} onSubmit={handleSubmit} />
         {/* показуємо лоудер при завантаженні */}
-        {isLoading && <Loading />}
+        {isFetching && <Loading />}
         {/* якщо виникла якась помилка */}
         {isError && <div className={css.message}>Error. Try again.</div>}
         {/* Якщо запит успішний але дані не знайдено */}

@@ -1,0 +1,18 @@
+@keyframes circle-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.carLoader {
+  scale: 1;
+  animation: circle-pulse 3s ease-in-out infinite;
+  margin: 0 auto;
+  display: block;
+}
